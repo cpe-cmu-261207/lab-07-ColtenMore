@@ -10,6 +10,21 @@ import {
 export default function Home() {
   const [todoText, setTodoText] = useState("")
   const [todos, setTodos] = useState([])
+  const [isFirstRender, setIsFirstRender] = useState(true)
+  
+  useEffect(() => {
+    const todoStr = localStorage.getItem('todo-react')
+		setTodos(JSON.parse(todoStr))
+	}, [])
+
+	useEffect(() => {
+		if (isFirstRender) {
+			setIsFirstRender(false)
+			return;
+		}
+		const todosStr = JSON.stringify(todos)
+		localStorage.setItem('todo-react', todosStr)
+	}, [todos])
 
   const deleteTodo = (idx) => {
     todos.splice(idx,1)
