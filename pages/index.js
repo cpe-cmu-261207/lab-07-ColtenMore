@@ -19,7 +19,8 @@ export default function Home() {
 
 	useEffect(() => {
 		if (isFirstRender) {
-			setIsFirstRender(false)
+			localStorage.setItem("todo-react", "[]");
+      setIsFirstRender(false)
 			return;
 		}
 		const todosStr = JSON.stringify(todos)
