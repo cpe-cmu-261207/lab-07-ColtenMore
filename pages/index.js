@@ -14,12 +14,14 @@ export default function Home() {
   
   useEffect(() => {
     const todoStr = localStorage.getItem('todo-react')
+    if(todoStr === null){
+      localStorage.setItem("todo-react", "[]");
+    }
 		setTodos(JSON.parse(todoStr))
 	}, [])
 
 	useEffect(() => {
 		if (isFirstRender) {
-			localStorage.setItem("todo-react", "[]");
       setIsFirstRender(false)
 			return;
 		}
