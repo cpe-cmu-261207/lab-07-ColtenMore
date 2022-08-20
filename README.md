@@ -15,4 +15,4 @@ npm run dev
 
 ให้นศ.ศึกษาวิธีการ build ใน **codesandbox.io** ได้จาก slide **Slide 10 - React Part One (extras)**
 
-https://codesandbox.io/s/vigorous-saha-dt3tne?file=/pages/index.js:532-573
+https://codesandbox.io/s/sad-agnesi-v9v0c5
